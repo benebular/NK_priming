@@ -128,7 +128,7 @@
 </div>
 
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzlEW8qmZ851o_adEcj0DKsrElOlIpgBm06zLrz6Ff-hk5VigcQcCNLJnuVAvxHAoSkWg/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzZj-EL9UnWVRZRXWzrQTnZ9WKWhehxTqYhrNlTywEfTMDL6loX-ObIjCAQf2p8zDan0g/exec";
 
 const CONFIG = {
   trialsUrl: "../data/final_trials.csv",
@@ -231,7 +231,7 @@ function parseMainTrials(csvText){
   if(wordIdx === -1 || nonwordIdx === -1 || relIdx === -1 || unrelIdx === -1) return [];
 
   const out = [];
-  for(let i = 0; i < Math.min(2, rows.length); i++){
+  for(let i = 0; i < rows.length; i++){
     const cells = rows[i];
     const baseId = idIdx !== -1 ? (cells[idIdx] || String(i+1)) : String(i+1);
     const wordTarget = cells[wordIdx] || "";
@@ -281,7 +281,7 @@ function parsePracticeTrials(csvText){
   if(wordIdx === -1 || nonwordIdx === -1 || relIdx === -1 || unrelIdx === -1) return [];
 
   const out = [];
-  for(let i = 0; i < rows.length; i++){
+  for(let i = 0; i < Math.min(2, rows.length); i++){
     const cells = rows[i];
     const baseId = idIdx !== -1 ? (cells[idIdx] || String(i+1)) : String(i+1);
     const wordTarget = cells[wordIdx] || "";
